@@ -1,0 +1,27 @@
+$fa-font-path = '../assets/fonts/font-awesome/'
+@import '~font-awesome-stylus/lib/font-awesome-stylus/index'
+
+<%_ if (filters.bootstrap) { %>
+$icon-font-path = '../assets/fonts/bootstrap/'
+@import '~bootstrap/dist/css/bootstrap.css'
+<% if (filters.oauth) { %>@import '~bootstrap-social/bootstrap-social.css'
+<% } %><% } %>
+
+//
+// App-wide Styles
+//
+
+.browserupgrade
+  background #ccc
+  color #000
+  margin 0.2em 0
+  padding 0.2em 0
+<% if(!filters.bootstrap) { %>
+// Responsive: Portrait tablets and up
+@media screen and (min-width: 768px)
+  .container
+    max-width 730px
+<% } %>
+
+[hidden]
+  display: none !important
